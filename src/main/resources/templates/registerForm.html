@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Training App</title>
+    <link rel="stylesheet" type="text/css" href="genereic-components.css">
+    <link rel="stylesheet" type="text/css" href="register-form.css">
+    <link rel="stylesheet" type="text/css" href="page-head.css">
+</head>
+<body>
+<div th:replace="fargments.html :: page-head"></div>
+<div id="register-form-wrapper">
+    <form action="/register" method="post" id="register-form">
+        <input type="text" id="login" th:field="*{userModel.login}" class="text-field" placeholder="Login">
+        <div th:text="${incorrectRepeat}"></div>
+        <input type="password" id="pass" th:field="*{userModel.pass}" class="text-field" placeholder="Password">
+        <input type="password" id="repeatPass" th:field="*{userModel.repeatPass}" class="text-field" placeholder="Repeat Password">
+        <input type="text" id="name" th:field="*{userModel.name}" class="text-field" placeholder="Name">
+        <input type="text" id="surname" th:field="*{userModel.surname}" class="text-field" placeholder="Surname">
+        <input type="text" id="age" th:field="*{userModel.age}" class="text-field" placeholder="Age">
+        <input type="submit" class="button-box" value="OK">
+    </form>
+</div>
+</body>
+</html>

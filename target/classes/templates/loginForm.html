@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Training App</title>
+    <link rel="stylesheet" type="text/css" href="genereic-components.css">
+    <link rel="stylesheet" type="text/css" href="login-form.css">
+    <link rel="stylesheet" type="text/css" href="page-head.css">
+</head>
+<body>
+<div th:replace="fargments.html :: page-head"></div>
+<div id="login-form-wrapper">
+    <form action="/authenticate" method="post" id="login-form">
+        <div th:text="${errorMessage}" id="error-message"></div>
+        <input type="text" id="login" th:field="*{userModel.login}" class="text-field" placeholder="Login">
+        <input type="password" id="pass" th:field="*{userModel.pass}" class="text-field" placeholder="Password">
+        <input type="submit" class="button-box" value="OK">
+    </form>
+</div>
+</body>
+</html>
